@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body, blockquote, p, h2 {
+    margin: 0;
+}
+
+body {
+    font: 15px 'League Spartan', sans-serif;
+}
+
+main {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.social-proof {
+    min-width: 268px;
+    max-width: 1124px;
+    padding: 3.8em 3em;
+    box-shadow: 0 .4em 1em 0 rgba(128, 128, 128, 0.471);
+    background: url('../images/bg-pattern-top-mobile.svg') no-repeat left top,
+                url('../images/bg-pattern-bottom-mobile.svg') no-repeat right bottom;
+}
+
+.social-proof > .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6em;
+    text-align: center;
+}
+
+.social-proof > .info > .text {
+    margin-bottom: 2em;
+    color: var(--dark-grayish-magenta);
+}
+
+.social-proof > .info > .text > .title {
+    margin-bottom: .6em;
+    font-size: 2.8em;
+    line-height: .9em;
+    color: var(--very-dark-magenta);
+}
+
+.social-proof > .info > .stars {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 580px;
+}
+
+.social-proof > .info > .stars > .stars-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 580px;
+    padding: .6em 0;
+    margin-bottom: 1em;
+    border-radius: .6em;
+    font-weight: 700;
+    color: var(--very-dark-magenta);
+    background: var(--light-grayish-magenta);
+}
+
+.social-proof > .info > .stars > .stars-item > .stars-icon {
+    margin-top: .4em;
+}
+
+.social-proof > .comments {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1.4em;
+}
+
+.social-proof > .comments > .user-comment {
+    width: 100%;
+    max-width: 580px;
+    padding: 2.8em 1.6em;
+    margin: 0 auto;
+    border-radius: .6em;
+    color: var(--light-grayish-magenta);
+    background: var(--very-dark-magenta);
+}
+
+
+.user-comment > .user-info {
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    grid-template-areas: "img name"
+                         "img auth";
+    column-gap: 1em;
+    row-gap: .2em;
+}
+
+.user-comment > .user-info > .user-photo {
+    grid-area: img;
+    width: 3em;
+    border-radius: 50%;
+}
+
+.user-comment > .user-info > .user-name {
+    grid-area: name;
+    align-self: end;
+    font-weight: 500;
+}
+
+.user-comment > .user-info > .auth-state {
+    grid-area: auth;
+    align-self: start;
+    color: var(--soft-pink);
+}
+
+.user-comment > .comment-text {
+    margin-top: 1.8em;
+    line-height: 1.4em;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 900px) {
+    .social-proof {
+        background: url('../images/bg-pattern-top-desktop.svg') no-repeat top left,
+        url('../images/bg-pattern-bottom-desktop.svg') no-repeat bottom right;
+    }
+
+    .social-proof > .info {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .social-proof > .info > .text {
+        max-width: 360px;
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .social-proof > .info > .stars {
+        width: 50%;
+    }
+
+    .social-proof > .info > .stars > .stars-item {
+        flex-direction: row;
+        gap: 2em;
+        max-width: 410px;
+        padding-left: 2.4em;
+    }
+
+    .social-proof > .info > .stars > .stars-item:nth-child(1) {
+        align-self: flex-start;
+    }
+    
+    .social-proof > .info > .stars > .stars-item:nth-child(2) {
+        align-self: center;
+    }
+    
+    .social-proof > .info > .stars > .stars-item:nth-child(3) {
+        align-self: flex-end;
+        margin-bottom: 0;
+    }
+
+    .social-proof > .comments {
+        flex-direction: row;
+        gap: 2em;
+        height: 292px;
+        margin-top: 4em;
+    }
+
+    .social-proof > .comments > .user-comment:nth-child(1) {
+        align-self: flex-start;
+    }
+
+    .social-proof > .comments > .user-comment:nth-child(2) {
+        align-self: center;
+    }
+
+    .social-proof > .comments > .user-comment:nth-child(3) {
+        align-self: flex-end;
+    }
+}
+
+/* league-spartan-regular */
+@font-face {
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: regular;
+    src: url('//lib.baomitu.com/fonts/league-spartan/league-spartan-regular.eot'); /* IE9 Compat Modes */
+    src: local('League Spartan'), local('LeagueSpartan-Normal'),
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-regular.woff') format('woff'), /* Modern Browsers */
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-regular.svg#LeagueSpartan') format('svg'); /* Legacy iOS */
+  }
+    
+  /* league-spartan-500 */
+  @font-face {
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 500;
+    src: url('//lib.baomitu.com/fonts/league-spartan/league-spartan-500.eot'); /* IE9 Compat Modes */
+    src: local('League Spartan'), local('LeagueSpartan-Normal'),
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-500.woff2') format('woff2'), /* Super Modern Browsers */
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-500.woff') format('woff'), /* Modern Browsers */
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-500.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-500.svg#LeagueSpartan') format('svg'); /* Legacy iOS */
+  }
+    
+  /* league-spartan-700 */
+  @font-face {
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//lib.baomitu.com/fonts/league-spartan/league-spartan-700.eot'); /* IE9 Compat Modes */
+    src: local('League Spartan'), local('LeagueSpartan-Normal'),
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-700.woff') format('woff'), /* Modern Browsers */
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('//lib.baomitu.com/fonts/league-spartan/league-spartan-700.svg#LeagueSpartan') format('svg'); /* Legacy iOS */
+  }
+    
